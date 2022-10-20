@@ -10,6 +10,9 @@ import { BookListComponent } from './book-list/book-list.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    BookListComponent
   ]
 })
 export class BookStoreModule { }
