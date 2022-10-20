@@ -1,1 +1,17 @@
-<p>book-list works!</p>
+<h1>Liste de livres : </h1>
+
+<ul class="bookList">
+    <li *ngFor="let book of bookList">
+        <span class="name">{{book.name}} - {{book.pages}} </span>
+    </li>
+</ul>
+
+<br><br>
+
+<label for="example-ngModel">New book name </label>
+<form>
+    <input name="name" [(ngModel)]="newBook.name" id="example-ngModel">
+    <input name="pages" [(ngModel)]="newBook.pages" id="example-ngModel">
+</form>
+
+<button (click)="createNewBook()">Test</button>

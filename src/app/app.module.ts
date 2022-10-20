@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 import { BookStoreModule } from './book-store/book-store.module';
 
 @NgModule({
@@ -11,7 +12,7 @@ import { BookStoreModule } from './book-store/book-store.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BookStoreModule
+    BookStoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
