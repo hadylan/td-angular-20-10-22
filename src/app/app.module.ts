@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BookStoreModule } from './book-store/book-store.module';
 import { FormsModule } from '@angular/forms';
 import { BookListComponent } from './book-store/book-list/book-list.component';
+import { BookDetailComponent } from './book-store/book-detail/book-detail.component';
 
 
 @NgModule({

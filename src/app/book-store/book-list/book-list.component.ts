@@ -14,8 +14,16 @@ export class BookListComponent implements OnInit {
   bookList: Book[] = [
     {name: 'Tom Sawyer', feedback: 'Good Book', rating: 3},
     {name: 'Guerre et Paix', feedback: 'Long Book', rating: 2.5},
+    {name: 'Les 4 accord Toltèques', feedback: 'Life changing book', rating:4}
   ]
 
+  selectedBook: Book | null = null;
+    onSelect(book: Book): void {
+      this.selectedBook = null;
+      setTimeout(() => {
+        this.selectedBook = book;
+      }, 10);
+}
   constructor() { }
 
   ngOnInit(): void {

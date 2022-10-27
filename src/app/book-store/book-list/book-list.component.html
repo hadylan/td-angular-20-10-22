@@ -11,6 +11,11 @@
             <td>{{ book.name }}</td>
             <td>{{ book.feedback }}</td>
             <td>{{ book.rating }}</td>
+            <button type="button" (click)="onSelect(book)"></button>
         </tr>
     </tbody>
 </table>
+
+<div *ngIf="selectedBook">
+    <app-book-detail [selectedBook]="selectedBook"></app-book-detail>
+</div>

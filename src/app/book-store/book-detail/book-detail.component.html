@@ -1,0 +1,17 @@
+<p>book-detail works!</p>
+
+<form [formGroup]="bookForm">
+    <h2>{{selectedBook!.name | uppercase}} Details</h2>
+    <div>
+        <label for="book-name">book name: </label>
+        <input type="text" id="book-name" formControlName="name" placeholder="name">
+    </div>
+    <div>
+        <label for="book-feedback">book feedback: </label>
+        <input type="text" id="book-feedback" formControlName="feedback" placeholder="feedback">
+    </div>
+    <div>
+        <label for="book-rating">book rating: </label>
+        <input type="number" id="book-rating" formControlName="rating" placeholder="rating">
+    </div>
+</form>
