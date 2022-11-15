@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from 'src/app/interfaces/book';
+import { Book, IBook } from 'src/app/interfaces/book';
 import { FormsModule } from '@angular/forms';
 
 
@@ -18,12 +18,13 @@ export class BookListComponent implements OnInit {
   ]
 
   selectedBook: Book | null = null;
+  //bookArray: IBook 
     onSelect(book: Book): void {
       this.selectedBook = null;
       setTimeout(() => {
         this.selectedBook = book;
       }, 10);
-}
+    }
   constructor() { }
 
   ngOnInit(): void {
