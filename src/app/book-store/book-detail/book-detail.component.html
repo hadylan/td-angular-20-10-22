@@ -1,6 +1,6 @@
-<p>book-detail works!</p>
+<!--<p>book-detail works!</p> -->
 
-<form [formGroup]="bookForm">
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
     <h2>{{selectedBook!.name | uppercase}} Details</h2>
     <div>
         <label for="book-name">book name: </label>
@@ -13,5 +13,9 @@
     <div>
         <label for="book-rating">book rating: </label>
         <input type="number" id="book-rating" formControlName="rating" placeholder="rating">
+    </div>
+    <div class="bookForm">
+        <button type="button" class="btn btn-secondary" (click)="resetForm()">Reset</button>
+        <button class="btn btn-primary">Envoyer</button>
     </div>
 </form>
