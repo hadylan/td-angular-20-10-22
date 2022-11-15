@@ -7,7 +7,7 @@
         <th>Ratings</th>
     </thead>
     <tbody>
-        <tr *ngFor="let book of bookList">
+        <tr *ngFor="let book of bookList" (click)="setCurrentBook(book)">
             <td>{{ book.name }}</td>
             <td>{{ book.feedback }}</td>
             <td>{{ book.rating }}</td>
@@ -17,5 +17,5 @@
 </table>
 
 <div *ngIf="selectedBook">
-    <app-book-detail [selectedBook]="selectedBook"></app-book-detail>
+    <app-book-detail [selectedBook]="selectedBook" (emitBook)="updateList($event)" ></app-book-detail>
 </div>
