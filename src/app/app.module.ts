@@ -8,6 +8,9 @@ import { FormsModule } from '@angular/forms';
 import { BookListComponent } from './book-store/book-list/book-list.component';
 import { BookDetailComponent } from './book-store/book-detail/book-detail.component';
 
+import { AdminModule } from './admin/admin.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -17,9 +20,14 @@ import { BookDetailComponent } from './book-store/book-detail/book-detail.compon
     BrowserModule,
     AppRoutingModule,
     BookStoreModule,
-    FormsModule
+    FormsModule,
+    AdminModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
