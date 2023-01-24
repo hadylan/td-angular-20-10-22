@@ -1,10 +1,30 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from '@angular/core';
+import { environment } from "src/environments/environment";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthServiceService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  login(email: string, password: string) {
+      return this.http.post<{ access_token: string }>(environment.backendUrl + '/auth', {email, password})
+        .subscribe(res => this.setSession(res.access_token));
+  }
+  private setSession(authToken: string) {
+    localStorage.setItem('expires_at', (Date.now() + 60 * 60 * 100).toString())
+    localStorage.setItem('id_token', authToken);
+  }
+  logout() {
+    localStorage.removeItem("id_token");
+    localStorage.removeItem("expires_at");
+  }
+  public isLoggedIn() {
+    const token = localStorage.getItem('id_token');
+    return (token !== null && token.length > 0 && Date.now() < this.getExpiration());
+  }
+  getExpiration(): number {
+    const expiration = localStorage.getItem("expires_at") ?? 0;
+    return Number.parseInt(expiration);
+  }
 }
