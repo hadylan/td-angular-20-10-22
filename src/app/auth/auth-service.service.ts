@@ -7,8 +7,8 @@ export class AuthServiceService {
 
   constructor(private http: HttpClient) { }
 
-  login(email: string, password: string) {
-      return this.http.post<{ access_token: string }>(environment.backendUrl + '/auth', {email, password})
+  login(username: string, password: string) {
+      return this.http.post<{ access_token: string }>(environment.backendUrl + '/auth', {username, password})
         .subscribe(res => this.setSession(res.access_token));
   }
   private setSession(authToken: string) {
