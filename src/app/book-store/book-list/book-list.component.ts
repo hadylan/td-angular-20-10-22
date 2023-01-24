@@ -9,7 +9,7 @@ import { IAutor, Autor } from '@libraries/shared';
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.css']
 })
-export class BookListComponent implements OnInit {
+export class BookListComponent {
 
   //bookArray: Array<Book> = new Array<Book>();
   bookList: IBook[] = [
@@ -40,8 +40,8 @@ export class BookListComponent implements OnInit {
     setTimeout(() => { this.selectedBook = book; }, 10);
   }
 
-  ngOnInit(): void {
+  /*ngOnInit(): void {
 
-  }
+  }*/
 
 }
