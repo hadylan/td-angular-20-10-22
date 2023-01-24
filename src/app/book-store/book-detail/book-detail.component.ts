@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Book, IBook } from '../../../../../shared/index';
+import { IBook } from '../../../../../shared';
 @Component({
   selector: 'app-book-detail',
   templateUrl: './book-detail.component.html',

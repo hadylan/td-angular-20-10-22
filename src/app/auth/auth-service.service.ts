@@ -24,7 +24,7 @@ export class AuthServiceService {
     return (token !== null && token.length > 0 && Date.now() < this.getExpiration());
   }
   getExpiration(): number {
-    const expiration = localStorage.getItem("expires_at") ?? 0;
+    const expiration = localStorage.getItem("expires_at") ?? "0";
     return Number.parseInt(expiration);
   }
 }
