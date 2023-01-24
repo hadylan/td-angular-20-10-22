@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Book, IBook } from '../../../../../shared/index';
+import { IBook } from '@libraries/shared';
 import { FormsModule } from '@angular/forms';
+import { IAutor, Autor } from '@libraries/shared';
 
 
 @Component({
@@ -11,16 +12,16 @@ import { FormsModule } from '@angular/forms';
 export class BookListComponent implements OnInit {
 
   //bookArray: Array<Book> = new Array<Book>();
-  bookList: Book[] = [
-    {name: 'Tom Sawyer', feedback: 'Good Book', rating: 3},
-    {name: 'Guerre et Paix', feedback: 'Long Book', rating: 2.5},
-    {name: 'Les 4 accord Toltèques', feedback: 'Life changing book', rating:4}
+  bookList: IBook[] = [
+    {id: 1, name: 'Tom Sawyer', feedback: 'Good Book', rating: 3, autor: new Autor(1, "jean", "dupon")},
+    {id : 2, name: 'Guerre et Paix', feedback: 'Long Book', rating: 2.5, autor: new Autor(2, "Lola", "Minou")},
+    {id: 3, name: 'Les 4 accord Toltèques', feedback: 'Life changing book', rating:4, autor: new Autor(3, "Joe", "Mealler")}
   ]
 
   selectedBook: IBook | null = null;
-  bookArray: Array<IBook> = new Array<Book>();
+  bookArray: Array<IBook> = new Array<IBook>();
 
-    onSelect(book: Book): void {
+    onSelect(book: IBook): void {
       this.selectedBook = null;
       setTimeout(() => {
         this.selectedBook = book;
