@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Book, IBook } from 'src/app/interfaces/book';
+import { Book, IBook } from '../../../../../shared/index';
 import { FormsModule } from '@angular/forms';
 
 
