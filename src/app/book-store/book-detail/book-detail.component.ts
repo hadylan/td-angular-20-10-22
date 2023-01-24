@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IBook } from '../../../../../shared';
+import { IAutor, Autor } from '@libraries/shared';
+import { IBook, Book } from '@libraries/shared';
+
 @Component({
   selector: 'app-book-detail',
   templateUrl: './book-detail.component.html',
@@ -26,7 +28,7 @@ export class BookDetailComponent implements OnInit {
     this.submitted = false;
 
     if (this.selectedBook == null) {
-      this.selectedBook = new Book('', '', 0);
+      this.selectedBook = new Book(1, '', '', 0);
     } else {
       this.bookForm.patchValue(this.selectedBook);
     }
